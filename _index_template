@@ -1,0 +1,14 @@
+POST http://192.168.1.50:9200/_index_template/budget_template
+
+{
+  "index_patterns": ["budget*"],
+  "template": {
+    "settings": {
+      "number_of_shards": 2,
+      "number_of_replicas": 1
+    },
+    "aliases" : {
+        "budget" : {}
+    }
+  }
+}
